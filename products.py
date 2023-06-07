@@ -21,42 +21,42 @@ cursor.execute('''CREATE TABLE products
 data = [
     {
         'id': 1,
-        'name': 'Bearbrick x BAPE ABC Camo Shark Clear Green',
+        'name': 'thanhtong',
         'price': 500,
         'image': 'img/br1.png',
         'qty': 1
     },
     {
         'id': 2,
-        'name': 'Bearbrick x Action City Jiangshi Glow In The Dark 1000%',
+        'name': 'thanhtongne',
         'price': 600,
         'image': 'img/br2.png',
         'qty': 1
     },
     {
         'id': 3,
-        'name': 'Bearbrick Captain A 400%',
+        'name': 'thanhtongdeptrai',
         'price': 700,
         'image': 'img/br3.png',
         'qty': 1
     },
     {
         'id': 4,
-        'name': 'Bearbrick Pink Panther',
+        'name': 'thanhtongdeptraine',
         'price': 800,
         'image': 'img/br4.png',
         'qty': 1
     },
     {
         'id': 5,
-        'name': 'Bearbrick x Toy Story Rozzo',
+        'name': 'tongsadboy',
         'price': 1000,
         'image': 'img/br5.png',
         'qty': 1
     },
     {
         'id': 6,
-        'name': 'Bearbrick Leonardo De Vinci Mona Lisa',
+        'name': 'tongsadboyne',
         'price': 1000,
         'image': 'img/br6.png',
         'qty': 1
