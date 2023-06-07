@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tìm kiếm sản phẩm</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+</head>
+<body>
+  <h1>thanh tòng đehp trai</h1>
+    <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm">
+    <button id="searchButton">Tìm kiếm</button>
+    <div id="resultContainer"></div>
+</body>
+<script>
+  document.getElementById('searchButton').addEventListener('click', function() {
+var searchTerm = document.getElementById('searchInput').value;
+searchProducts(searchTerm);
+});
+
+function searchProducts(searchTerm) {
+var apiUrl = 'http://localhost:5000/products';
+
+axios.get(apiUrl, {
+    params: {
+        name: searchTerm
+    }
+})
+.then(function(response) {
+    displayProducts(response.data);
+})
+.catch(function(error) {
+    console.error('Yêu cầu tìm kiếm sản phẩm không thành công.', error);
+});
+}
+
+function displayProducts(products) {
+  // Xóa nội dung hiện tại của trang
+  document.body.innerHTML = '';
+
+  if (products.length > 0) {
+    for (var i = 0; i < products.length; i++) {
+      var product = products[i];
+      var productHtml = '<div>';
+      productHtml += '<h3>' + product.name + '</h3>';
+      productHtml += '<p>Giá: ' + product.price + '</p>';
+      productHtml += '<img src="' + product.image + '" alt="' + product.name + '">';
+      productHtml += '</div>';
+      // Thêm sản phẩm vào trang mới
+      document.body.innerHTML += productHtml;
+    }
+  } else {
+    // Hiển thị thông báo không tìm thấy sản phẩm
+    document.body.innerHTML = '<p>Không tìm thấy sản phẩm.</p>';
+  }
+}
+
+
+
+</script>
+</html>
